@@ -1,4 +1,4 @@
-package main;
+package models;
 
 public class Book {
     private String id;
@@ -82,11 +82,10 @@ public class Book {
         }
     }
 
-    public void bookToString() {
-        System.out.println(id + "," + author + "," + title + "," + genre + "," + price + "," + publish_date + "," + description );
-    }
-
     public void setDescription(String description) {
-        this.description = description;
+        if(!descriptionFull) {
+            descriptionFull = true;
+            this.description = description;
+        }
     }
 }

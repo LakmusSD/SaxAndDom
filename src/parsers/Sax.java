@@ -1,5 +1,7 @@
-package main;
+package parsers;
 
+import models.Book;
+import menu.Menu;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -23,7 +25,7 @@ public class Sax extends DefaultHandler {
     @Override
     public void endDocument() throws SAXException {
         System.out.println("Разбор документа окончен!");
-        new Main().setStack(bookList);//передаем список книг в мейн чтобы потом передать его в Dom
+        Menu.setStack(bookList);//передаем список книг в мейн чтобы потом передать его в Dom
     }
 
     @Override
